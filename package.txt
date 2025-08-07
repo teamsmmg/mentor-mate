@@ -6,3 +6,4 @@ bharat :
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.12.1"
+    "cloudinary": "^2.7.0"
