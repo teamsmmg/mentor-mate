@@ -127,4 +127,28 @@ api :
 
                
 
+         today : 07/08/25
          
+         auth/register.js
+         
+         auth/login.js
+         
+         auth/mentor-register.js
+         
+         login , register :oauth integrated , nodemailer , 
+         
+         mentor register : nodemailer 
+         
+         signup forntend with tailwand 
+         
+         -------------
+         
+         profile/update-profile.js
+         
+         type : update-mentee
+         
+         type: profile-photo-update
+         
+         type: email-update : nodemailer otp and updated mail 
+         
+         type: phone-update : 
