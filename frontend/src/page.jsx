@@ -37,7 +37,7 @@ const Navigation = () => {
             <a href="#" className="text-gray-700 hover:text-[#7e81fb] transition-colors">
               Search
             </a>
-            <a href="#" className="text-gray-700 hover:text-[#7e81fb] transition-colors">
+            <a href="/mentor-listing" className="text-gray-700 hover:text-[#7e81fb] transition-colors">
               Listing
             </a>
             <a href="#" className="text-gray-700 hover:text-[#7e81fb] transition-colors">
@@ -63,7 +63,7 @@ const Navigation = () => {
               <a href="#" className="text-gray-700">
                 Search
               </a>
-              <a href="#" className="text-gray-700">
+              <a href="/mentor-listing" className="text-gray-700">
                 Listing
               </a>
               <a href="#" className="text-gray-700">

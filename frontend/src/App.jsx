@@ -29,6 +29,7 @@ const App = () => {
       <nav>
         <Link to="/login">Login</Link> |{" "}
         <Link to="/signup">Signup</Link> |{" "}
+        <Link to="/mentor-listing">MentorListing</Link>
       </nav>
 
       {/* Routes */}
