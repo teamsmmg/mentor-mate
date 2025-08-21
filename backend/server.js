@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 const profileRoutes = require("./routes/profileRoute");
 const authRouter = require('./routes/authRoutes');
 const mentorRouter = require("./routes/mentorRoutes");
+const requestRoutes = require("./routes/requestRoutes");
 
 dotenv.config();
 connectDB();
@@ -15,7 +16,7 @@ const app = express();
 
 // CORS options
 const corsOptions = {
-  origin: 'http://127.0.0.1:5500',
+  origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
@@ -26,9 +27,11 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
-app.use("/api", profileRoutes);
+app.use("/api/profile", profileRoutes);
 app.use('/api/mentor', mentorRouter);
 app.use('/api/auth', authRouter);
+
+app.use("/api", requestRoutes);
 
 app.get('/', (req, res) => {
   res.send('🏥 Server API is running...');

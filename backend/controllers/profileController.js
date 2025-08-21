@@ -1,8 +1,9 @@
 const Mentee = require("../models/Mentee");
 const cloudinary = require("../config/cloudinary");
 const sendEmail = require("../middlewares/emailService");
-const User = require("../models/user"); 
-
+const User = require("../models/userModel.js"); 
+const Mentor = require("../models/mentor");
+const Request = require("../models/request");
 exports.updateProfile = async (req, res) => {
   try {
     const { type, name, age, gender, working, email, phone } = req.body;
@@ -89,6 +90,52 @@ exports.verifyEmailOtp = async (req, res) => {
 
   } catch (err) {
     console.error("Error verifying email OTP:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+exports.getContactedMentors = async (req, res) => {
+  try {
+    const userId = req.userId; // JWT से मिला हुआ userId
+
+    // mentee find करो
+    const mentee = await Mentee.findOne({ userId }).populate("contactedMentors");
+
+    if (!mentee) return res.status(404).json({ error: "Mentee not found" });
+
+    // contactedMentors -> Request[] में से mentorId निकालो
+    const requestIds = mentee.contactedMentors;
+    const requests = await Request.find({ _id: { $in: requestIds } }).populate("mentorId");
+
+    // mentor list निकालो
+    const mentors = requests.map(req => req.mentorId);
+
+    res.json({ mentors });
+  } catch (err) {
+    console.error("Get Contacted Mentors Error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+// 👇 नया controller function : Get specific mentee profile
+// 👇 नया controller function : Get specific mentor profile
+exports.getContactedMentorProfile = async (req, res) => {
+  try {
+    const { mentorId } = req.body;
+
+    if (!mentorId) {
+      return res.status(400).json({ error: "Mentor ID is required" });
+    }
+
+    const mentor = await Mentor.findById(mentorId)
+     
+    if (!mentor) {
+      return res.status(404).json({ error: "Mentor not found" });
+    }
+
+    res.json({ mentor });
+  } catch (err) {
+    console.error("Get Contacted Mentor Profile Error:", err);
     res.status(500).json({ error: "Server error" });
   }
 };

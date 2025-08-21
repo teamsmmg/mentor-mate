@@ -73,12 +73,16 @@ export default function LoginPage() {
       >
         <div className="p-6 sm:p-8">
           <header className="mb-6 text-center">
-            <div className="mx-auto h-12 w-12 rounded-lg bg-indigo-50 flex items-center justify-center">
+            <div className="mx-auto h-12 w-12 rounded-lg flex items-center justify-center">
               {/* simple logo */}
-              <svg className="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M3 12h18" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 3v18" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <div className="flex items-center pr-10">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%282%29-9g4laL1EiPmzEURRA8f5yfZmMIVaJ1.png"
+              alt="MentorMate"
+              className="h-8 w-8"
+            />
+            <span className="ml-2 text-2xl font-bold text-[#5c59b1]">MentorMate</span>
+          </div>
             </div>
             <h1 className="mt-4 text-2xl font-semibold tracking-tight text-gray-900">Welcome back</h1>
             <p className="mt-1 text-sm text-gray-500">Sign in to continue to your account</p>
@@ -137,7 +141,7 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-white font-medium shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#5c59b1] px-4 py-2 text-white font-medium shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300"
                 aria-busy={loading}
               >
                 {loading ? (
@@ -158,8 +162,8 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                <button type="button" className="inline-flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+              <div className="grid gap-3">
+                <button type="button" className="flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
                   {/* Google */}
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M21 12.23c0-.72-.06-1.26-.19-1.81H12v3.42h5.48c-.1.9-.66 2.31-1.99 3.21l.02.13 2.9 2.24.2.02c1.86-1.71 2.95-4.23 2.95-7.21z" fill="#4285F4" />
@@ -168,14 +172,6 @@ export default function LoginPage() {
                     <path d="M12 6.5c1.46 0 2.78.5 3.82 1.47l2.86-2.86C16.95 3.66 14.7 2.5 12 2.5 8.17 2.5 4.99 4.53 3.18 7.32l3.13 2.41C7.11 8.28 9.35 6.5 12 6.5z" fill="#EA4335" />
                   </svg>
                   Google
-                </button>
-
-                <button type="button" className="inline-flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                  {/* GitHub */}
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                    <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.28 3.44 9.75 8.21 11.32.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.62-4.04-1.62-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.28-1.55 3.29-1.23 3.29-1.23.67 1.65.25 2.87.12 3.17.77.84 1.24 1.92 1.24 3.24 0 4.64-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.22.7.83.58C20.56 22.25 24 17.78 24 12.5 24 5.87 18.63.5 12 .5z" />
-                  </svg>
-                  GitHub
                 </button>
               </div>
 

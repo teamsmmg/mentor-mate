@@ -39,8 +39,9 @@ const register = async (req, res) => {
 
     res.json({ success: true });
   } catch (error) {
-    return res.json({ success: false, message: 'error jahata' });
-  }
+  console.error("❌ Register error:", error.message);
+  return res.status(500).json({ success: false, message: error.message });
+}
 };
 
 const login = async (req, res) => {

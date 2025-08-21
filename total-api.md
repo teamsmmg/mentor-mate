@@ -119,11 +119,11 @@ api :
 
                type: get-profile , update profile 
 
-               type:get-mentee-request : update 
+               type:get-mentee-request : update and get also so he can update the pending request
 
-               type: get-mentor-payment
+               type: get-mentor-payment (dont required to make )
 
-               type: delete
+               type: delete ( form a model where 14 days staying profile )
 
                
 

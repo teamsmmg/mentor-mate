@@ -7,10 +7,10 @@ const userSchema = new mongoose.Schema({
     verifyOtp: { type: String, default: '' },
     verifyOtpExpireAt: { type: Number, default: 0 },
     isAccountVerified: { type: Boolean, default: false },
-    resetOtp: { type: String, default: '' },          // ✅ spelling fix (reserOtp → resetOtp)
-    resetOtpExpireAt: { type: Number, default: 0 }    // ✅ spelling fix
+    resetOtp: { type: String, default: '' },          
+    resetOtpExpireAt: { type: Number, default: 0 }    
 });
 
-const userModel = mongoose.models.user || mongoose.model('user', userSchema);
+const userModel = mongoose.models.user || mongoose.model('User', userSchema);
 
 module.exports = userModel;
