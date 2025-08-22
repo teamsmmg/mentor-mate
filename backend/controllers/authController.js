@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const userModel = require('../models/userModel.js');
+const userModel = require('../models/user.js');
 const jwt = require('jsonwebtoken');
 const sendEmail = require('../middlewares/emailService.js');   // ✅ नया import
 

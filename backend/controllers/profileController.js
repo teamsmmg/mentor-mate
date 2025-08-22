@@ -1,7 +1,7 @@
 const Mentee = require("../models/Mentee");
 const cloudinary = require("../config/cloudinary");
 const sendEmail = require("../middlewares/emailService");
-const User = require("../models/userModel.js"); 
+const User = require("../models/user.js"); 
 const Mentor = require("../models/mentor");
 const Request = require("../models/request");
 exports.updateProfile = async (req, res) => {

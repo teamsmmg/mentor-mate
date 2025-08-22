@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const Request = require("../models/request");
-const User = require("../models/userModel");
+const User = require("../models/user");
 const Mentee = require("../models/Mentee");
 const Mentor = require("../models/mentor");
 const sendEmail = require("../middlewares/emailService");

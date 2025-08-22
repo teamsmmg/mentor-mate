@@ -11,7 +11,6 @@ const authMiddleware = require("../middlewares/authMiddleware.js");
 
 const mentorRouter = express.Router();
 
-// ✅ Routes
 mentorRouter.get("/mentor-data", authMiddleware, getMentors);
 
 // mentor-profile
