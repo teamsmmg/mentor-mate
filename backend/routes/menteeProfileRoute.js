@@ -7,7 +7,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 
 const upload = multer({ dest: "uploads/" });
 
-// existing routes
+
 router.post(
   "/update-profile",
   authMiddleware,
@@ -21,7 +21,7 @@ router.post(
   profileController.verifyEmailOtp
 );
 
-// 👇 नए routes
+
 router.get(
   "/get-contacted-mentor",
   authMiddleware,

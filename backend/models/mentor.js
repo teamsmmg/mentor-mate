@@ -50,8 +50,8 @@ const MentorSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// ❌ पहले user model check हो रहा था (galat)
-// ✅ अब सही Mentor model check किया है
+
+
 const Mentor = mongoose.models.Mentor || mongoose.model('Mentor', MentorSchema);
 
 module.exports = Mentor;

@@ -23,7 +23,7 @@ const RequestSchema = new Schema(
   { timestamps: true }
 );
 
-// ⚡ Duplicate model error se bachne ke liye
+
 const Request = mongoose.models.Request || mongoose.model("Request", RequestSchema);
 
 module.exports = Request;

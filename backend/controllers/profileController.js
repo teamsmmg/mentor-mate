@@ -7,7 +7,7 @@ const Request = require("../models/request");
 exports.updateProfile = async (req, res) => {
   try {
     const { type, name, age, gender, working, email, phone } = req.body;
-    const userId = req.userId; // from auth middleware
+    const userId = req.userId; 
 
     let updateData = {};
 
@@ -24,7 +24,7 @@ exports.updateProfile = async (req, res) => {
 
     else if (type === "email-update" && email) {
       const otp = Math.floor(100000 + Math.random() * 900000);
-      req.app.locals[email] = otp; // store in app memory (temp)
+      req.app.locals[email] = otp; 
       const emailSent = await sendEmail(
         email,
         "Email Verification OTP",
@@ -70,17 +70,17 @@ exports.verifyEmailOtp = async (req, res) => {
   const userId = req.userId;
 
   try {
-    // Check OTP from app locals
+    
     if (req.app.locals[email] && req.app.locals[email] == otp) {
       
-      // Update email inside User model
+      
       const updatedUser = await User.findByIdAndUpdate(
         userId,
         { $set: { email } },
         { new: true }
       );
 
-      // Remove OTP from memory
+      
       delete req.app.locals[email];
 
       return res.json({ message: "Email updated", user: updatedUser });
@@ -96,18 +96,18 @@ exports.verifyEmailOtp = async (req, res) => {
 
 exports.getContactedMentors = async (req, res) => {
   try {
-    const userId = req.userId; // JWT से मिला हुआ userId
+    const userId = req.userId; 
 
-    // mentee find करो
+    
     const mentee = await Mentee.findOne({ userId }).populate("contactedMentors");
 
     if (!mentee) return res.status(404).json({ error: "Mentee not found" });
 
-    // contactedMentors -> Request[] में से mentorId निकालो
+    
     const requestIds = mentee.contactedMentors;
     const requests = await Request.find({ _id: { $in: requestIds } }).populate("mentorId");
 
-    // mentor list निकालो
+    
     const mentors = requests.map(req => req.mentorId);
 
     res.json({ mentors });
@@ -117,8 +117,8 @@ exports.getContactedMentors = async (req, res) => {
   }
 };
 
-// 👇 नया controller function : Get specific mentee profile
-// 👇 नया controller function : Get specific mentor profile
+
+
 exports.getContactedMentorProfile = async (req, res) => {
   try {
     const { mentorId } = req.body;

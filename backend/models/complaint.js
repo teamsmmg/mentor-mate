@@ -1,22 +1,14 @@
-import mongoose, { Schema, Document } from "mongoose";
+const mongoose = require("mongoose");
 
-export interface IComplaint extends Document {
-  category: string;
-  topic: string;
-  description: string;
-  image?: string;
-  dateOfSubmission: Date;
-}
-
-const ComplaintSchema = new Schema<IComplaint>(
+const ComplaintSchema = new mongoose.Schema(
   {
-    category: String,
-    topic: String,
-    description: String,
-    image: String,
+    category: { type: String, required: true },
+    topic: { type: String, required: true },
+    description: { type: String, required: true },
+    image: { type: String },
     dateOfSubmission: { type: Date, default: Date.now },
   },
   { timestamps: true }
 );
 
-export default mongoose.model<IComplaint>("Complaint", ComplaintSchema);
+module.exports = mongoose.model("Complaint", ComplaintSchema);

@@ -13,7 +13,7 @@ const mentorRouter = express.Router();
 
 mentorRouter.get("/mentor-data", authMiddleware, getMentors);
 
-// mentor-profile
+
 mentorRouter.post("/get-mentor-profile", getMentorProfile); 
 mentorRouter.patch("/update-mentor-profile", updateMentorProfile); 
 mentorRouter.post("/get-mentee-request", getMenteeRequest); 

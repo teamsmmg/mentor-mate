@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const userModel = require('../models/user.js');
 const jwt = require('jsonwebtoken');
-const sendEmail = require('../middlewares/emailService.js');   // ✅ नया import
+const sendEmail = require('../middlewares/emailService.js');   
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -20,7 +20,7 @@ const register = async (req, res) => {
     const user = new userModel({ name, email, password: hashedPassword });
     await user.save();
 
-    // create token
+    
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     res.cookie('token', token, {
@@ -30,7 +30,7 @@ const register = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    // ✅ send welcome email
+    
     await sendEmail(
       email,
       'Welcome to Auth Tutorial',
@@ -93,7 +93,7 @@ const logout = async (req, res) => {
   }
 };
 
-// send verification otp
+
 const sendVerifyOtp = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -160,7 +160,7 @@ const isAuthenticated = async (req, res) => {
   }
 };
 
-// send password reset otp
+
 const sendResetOtp = async (req, res) => {
   const { email } = req.body;
 

@@ -1,10 +1,7 @@
-require("dotenv").config(); // Load environment variables from .env
+require("dotenv").config(); 
 const jwt = require("jsonwebtoken");
 
-/**
- * Generate JWT token from userId
- * Usage: node generateToken.js <userId>
- */
+
 const generateToken = (userId) => {
   const payload = { id: userId };
   const secret = process.env.JWT_SECRET;
@@ -14,11 +11,11 @@ const generateToken = (userId) => {
     process.exit(1);
   }
 
-  const token = jwt.sign(payload, secret, { expiresIn: "7d" }); // valid for 7 days
+  const token = jwt.sign(payload, secret, { expiresIn: "7d" }); 
   return token;
 };
 
-// CLI usage
+
 const args = process.argv.slice(2);
 if (args.length !== 1) {
   console.log("Usage: node generateToken.js <userId>");

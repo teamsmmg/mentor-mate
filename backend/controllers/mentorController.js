@@ -1,7 +1,7 @@
 const Mentor = require("../models/mentor.js");
 const Request = require("../models/request.js");
 
-// ✅ Get all mentors
+
 const getMentors = async (req, res) => {
   try {
     const mentors = await Mentor.find().select(
@@ -19,7 +19,7 @@ const getMentors = async (req, res) => {
   }
 };
 
-// ✅ Get mentor profile
+
 const getMentorProfile = async (req, res) => {
   try {
     const { userId } = req.body; 
@@ -44,7 +44,7 @@ const getMentorProfile = async (req, res) => {
   }
 };
 
-// ✅ Update mentor profile
+
 const updateMentorProfile = async (req, res) => {
   try {
     const { mentorId } = req.body;
@@ -93,7 +93,7 @@ const updateMentorProfile = async (req, res) => {
   }
 };
 
-// ✅ Get mentee requests
+
 const getMenteeRequest = async (req, res) => {
   try {
     const { userId } = req.body;
@@ -127,7 +127,7 @@ const getMenteeRequest = async (req, res) => {
   }
 };
 
-// ✅ Update pending request
+
 const updatePendingRequest = async (req, res) => {
   try {
     const { requestId } = req.body;
@@ -172,7 +172,7 @@ const updatePendingRequest = async (req, res) => {
   }
 };
 
-// ✅ Export all functions
+
 module.exports = {
   getMentors,
   getMentorProfile,
