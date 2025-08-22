@@ -4,9 +4,9 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 
-const profileRoutes = require("./routes/profileRoute");
+const menteeProfileRoutes = require("./routes/menteeProfileRoute");
 const authRouter = require('./routes/authRoutes');
-const mentorRouter = require("./routes/mentorRoutes");
+const mentorProfileRouter = require("./routes/mentorProfileRoutes");
 const requestRoutes = require("./routes/requestRoutes");
 
 dotenv.config();
@@ -27,8 +27,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
-app.use("/api/profile", profileRoutes);
-app.use('/api/mentor', mentorRouter);
+app.use("/api/profile", menteeProfileRoutes);
+app.use('/api/mentor', mentorProfileRouter);
 app.use('/api/auth', authRouter);
 
 app.use("/api", requestRoutes);
