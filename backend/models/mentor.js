@@ -24,6 +24,7 @@ const MentorSchema = new mongoose.Schema(
     currentJob: {
       post: String,
       companyName: String,
+      image: String,
       state: String,
       city: String,
     },
@@ -31,6 +32,7 @@ const MentorSchema = new mongoose.Schema(
       {
         post: String,
         companyName: String,
+        image: String,
         state: String,
         city: String,
       },
@@ -46,6 +48,7 @@ const MentorSchema = new mongoose.Schema(
     videoLink: String,
     photos: [String],
     lastLogin: Date,
+    language: [String],
   },
   { timestamps: true }
 );

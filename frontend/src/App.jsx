@@ -9,6 +9,7 @@ import MentorDetails from "./pages/mentorDetails.jsx"
 import LandingPage from "./pages/landing-page.jsx"
 
 import "./App.css"
+import JoinAsExpert from "./pages/join-as-expert.jsx"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/mentor-listing" element={<MentorGrid />} />
       <Route path="/dashboard" element={<ContactedMentors />} />
       <Route path="/mentor-details" element={<MentorDetails />} />
+       <Route path="/mentor-register" element={<JoinAsExpert />} />
     </Routes>
   )
 }

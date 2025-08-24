@@ -7,11 +7,10 @@ const {
   updatePendingRequest,
 } = require("../controllers/mentorController.js");
 
-const authMiddleware = require("../middlewares/authMiddleware.js");
 
 const mentorRouter = express.Router();
 
-mentorRouter.get("/mentor-data", authMiddleware, getMentors);
+mentorRouter.get("/mentor-data", getMentors);
 
 
 mentorRouter.post("/get-mentor-profile", getMentorProfile); 

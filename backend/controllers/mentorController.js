@@ -5,7 +5,7 @@ const Request = require("../models/request.js");
 const getMentors = async (req, res) => {
   try {
     const mentors = await Mentor.find().select(
-      "userId name profilePhoto currentJob price rating bio"
+      "userId name profilePhoto categories currentJob price rating bio"
     );
 
     if (!mentors.length) {

@@ -134,3 +134,62 @@
 
 - Implemented **Feedback Page**
   - Rating and Review system included
+
+
+
+
+
+
+
+/nitin : 
+
+signup - signup : verification user : adding a skip button in the page 
+
+schedule option should be added in the mentor-details page 
+
+mentor-dashboard to be completed
+
+/bharat:
+
+database : exam , adding categroy : cyber security ( define category : 10 , subcategory : )
+
+find -mentor page : filter : newsfirst , toprated , 
+
+search api : language optioon 
+
+mentee verification page 
+
+/mayank:
+
+you can now join the meeting ( in both mentor dashboard and mentee dashboard )
+
+who will join first there while be a message please join ( though the email )
+
+and there will be a buffer of 15 min ( added so that if one join the second person can join in 15 min otherwise the meeting will be cancelled)
+
+delete mentor and mentee ( 14 days timer )
+
+
+
+
+
+
+
+
+
+------------
+
+
+
+/pages : 
+
+about us page 
+
+contact us page
+
+terms and condition page
+
+faq page
+
+ privacy policy page 
+
